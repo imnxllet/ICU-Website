@@ -6,6 +6,31 @@
 	<link rel="stylesheet" type="text/css" href="general.css">
 	<link rel="stylesheet" type="text/css" href="events.css">
 	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+	<script>
+
+    $(function() {
+
+
+   var people = [];
+
+   $.getJSON('./json_data/events.json', function(data) {
+       $.each(data.events, function(i, f) {
+          var event =
+"<div class=\"col-sm-4\">" + 
+						"<div class=\"card card-border\" >" + 
+							"<a class=\'c\'href=\"" + f.link +"\" >" + 
+								"<h4 class=\"card-title\">"+ f.title + "</h4>" + 
+								"<img class=\"card-img-top card-md \" src=\"" + f.poster + "\" alt=\"Card image cap\">" + 
+								"<div class=\"card-block\">" + 
+									"<p class=\"card-text\">" + f.description+ "</p>" + 
+								"</div></a></div></div>";
+           $(event).appendTo("#events_list");
+     });
+
+   });
+
+});
+</script>
 </head>
 <body>
 	<!--    SECTION 1 NAVBAR-->
@@ -37,33 +62,15 @@
 	<div class="container">
 		<div class="card-deck-wrapper">
 			<div class="card-deck">
-				
+				<div class="row" id="events_list">
+					
+		
+						
 
-				<div class="card card-border" >
-					<a class='c'href="./event-paintnight.html" >
-						<h4 class="card-title">校園爭霸戰</h4>
-						<img class="card-img-top card-md " src="./img/event-studentwar-card.jpg" alt="Card image cap">
-						<div class="card-block">
-							<p class="card-text">硝煙四起的校園，為了自己的班集體榮譽而戰！究竟誰能帶領同學們獲得最終的勝利，登上會長的寶座呢?! </p>
-
-						</div>
-					</a>
 				</div>
-				
-				
-				<div class="card card-border">
-					<a class='c'href="./event-paintnight.html" >
-						<h4 class="card-title">粵語教學－白色情人節</h4>
-						<img class="card-img-top card-md" src="./img/event-whitevalentine.jpg" alt="Card image cap">
-						<div class="card-block">
-							<p class="card-text">不記得怎麼用廣東話追心儀的男神女神？好學的你還想學多點廣東話？ICU最懂你！萬眾期待 你們朝思暮想的canto class又回來了！</p>
-
-						</div>
-					</a>
-				</div>
-				
 			</div>
 		</div>
+		
 		<br><br><br>
 	</div>
 
