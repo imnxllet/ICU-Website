@@ -1,9 +1,10 @@
 <html>
 
 <head>
+<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
     <script src="sponsors.js"></script>
     <link rel="stylesheet" type="text/css" href="general.css">
@@ -20,8 +21,9 @@
 
    $.getJSON('./json_data/sponsors.json', function(data) {
        $.each(data.sponsors, function(i, f) {
-          var sponsor = "<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-4\"><div class=\"card card-border\"><div class=\"thumbnail\"> <img width=\"360\" height=\"150\" src=\"" + f.picture + "\" alt=\"thumbnail\"><a href=\"#\" class=\"thumb-cover\"></a><div class=\"details\"><div class=\"clearfix\"></div></div> <b class=\"actions\"><a class=\"btn btn-neutral btn-round btn-fill\" href=\"#\">More Details</a></b> </div> <div class=\"card-info\"><a href=\"#\"><h3>"+ f.title +"</h3><div class=\"circle-red\"><i class=\"fa fa-circle-o\"></i></div><p>"+ f.description +"</p></a></div></div></div>";
-           $(sponsor).appendTo("#sponsors");
+          var sponsor =
+"<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-4\"><div class=\"card card-border\"><div class=\"thumbnail\"> <img width=\"360\" height=\"150\" src=\"" + f.poster + "\" alt=\"thumbnail\"><a href=\""+ f.link +"\" class=\"thumb-cover\"></a><div class=\"details\"><div class=\"clearfix\"></div></div> <b class=\"actions\"><a class=\"btn btn-neutral btn-round btn-fill\" href=\"#\">More Details</a></b> </div> <div class=\"card-info\"><a href=\"#\"><h3>"+ f.title +"</h3><div class=\"circle-red\"><i class=\"fa fa-circle-o\"></i></div><p>"+ f.description +"</p></a></div></div></div>";
+           $(sponsor).appendTo("#" + f.type);
      });
 
    });
@@ -103,113 +105,16 @@
                     </div>
 
                     <div id="health" class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                            <div class="card card-border">
-                                <div class="thumbnail"> <img width="360" height="150" src="http://lorempixel.com/350/260/nature/8/" alt="thumbnail">
-                                    <a href="#" class="thumb-cover"></a>
-                                    <div class="details">
-
-
-                                        <div class="clearfix"></div>
-                                    </div> <b class="actions">
-                                    <a class="btn btn-neutral btn-round btn-fill" href="#">More Details</a>
-                                </b> </div>
-                                <div class="card-info">
-                                    <a href="#">
-                                        <h3>Sponsor 1 </h3>
-                                        <div class="circle-red"><i class="fa fa-circle-o"></i></div>
-                                        <p> description</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                            <div class="card card-border">
-                                <div class="thumbnail"> <img width="360" height="150" src="http://lorempixel.com/350/260/nature/10/" alt="thumbnail">
-                                    <a href="#" class="thumb-cover"></a>
-                                    <div class="details">
-
-
-                                        <div class="clearfix"></div>
-                                    </div> <b class="actions">
-                                    <a class="btn btn-neutral btn-round btn-fill" href="#">More Details</a>
-                                </b> </div>
-                                <div class="card-info">
-                                    <a href="#">
-                                        <h3>Sponsor 2 </h3>
-                                        <div class="circle-red"><i class="fa fa-circle-o"></i></div>
-                                        <p> description</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+ 
                     </div>
                 
 
                 <div id="insurance" class="row">
-                                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                            <div class="card card-border">
-                                <div class="thumbnail"> <img width="360" height="150" src="http://lorempixel.com/350/260/nature/4/" alt="thumbnail">
-                                    <a href="#" class="thumb-cover"></a>
-                                    <div class="details">
-
-
-                                        <div class="clearfix"></div>
-                                    </div> <b class="actions">
-                                    <a class="btn btn-neutral btn-round btn-fill" href="#">More Details</a>
-                                </b> </div>
-                                <div class="card-info">
-                                    <a href="#">
-                                        <h3>Sponsor 1 </h3>
-                                        <div class="circle-red"><i class="fa fa-circle-o"></i></div>
-                                        <p> description</p>
-                                    </a>
-                                </div>
-                            </div>
+                                           
                         </div>
                 </div>
                 <div id="entertainment" class="row">
-                                                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                            <div class="card card-border">
-                                <div class="thumbnail"> <img width="360" height="150" src="http://lorempixel.com/350/260/nature/0/" alt="thumbnail">
-                                    <a href="#" class="thumb-cover"></a>
-                                    <div class="details">
-
-
-                                        <div class="clearfix"></div>
-                                    </div> <b class="actions">
-                                    <a class="btn btn-neutral btn-round btn-fill" href="#">More Details</a>
-                                </b> </div>
-                                <div class="card-info">
-                                    <a href="#">
-                                        <h3>Sponsor 1 </h3>
-                                        <div class="circle-red"><i class="fa fa-circle-o"></i></div>
-                                        <p> description</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                                                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                            <div class="card card-border">
-                                <div class="thumbnail"> <img width="360" height="150" src="http://lorempixel.com/350/260/nature/3/" alt="thumbnail">
-                                    <a href="#" class="thumb-cover"></a>
-                                    <div class="details">
-
-
-                                        <div class="clearfix"></div>
-                                    </div> <b class="actions">
-                                    <a class="btn btn-neutral btn-round btn-fill" href="#">More Details</a>
-                                </b> </div>
-                                <div class="card-info">
-                                    <a href="#">
-                                        <h3>Sponsor 2 </h3>
-                                        <div class="circle-red"><i class="fa fa-circle-o"></i></div>
-                                        <p> description</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                </div>
+  
 
             </div>
         </div>
